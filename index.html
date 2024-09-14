@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigate to Script</title>
+</head>
+<body>
+    <h1>Select a Script to Load</h1>
+
+    <div class="input">
+        <!-- Dropdown for selecting the script -->
+    <label for="script-choice" style="font-size: 25px; color: blue;"><b>Choose a File:</b></label>
+    <select id="script-choice" style="font-size: 20px;">
+        <option value="script1.js">Perform Basic Calculator Operations</option>
+        <option value="script2.js">Check Even/Odd</option>
+        <option value="script3.js">Check Grade by Input Score</option>
+        <option value="script4.js">Check Age Classify</option>
+        <option value="script5.js">Check Password Validaton</option>
+    </select>
+
+    <button id="load-script" style="background-color:greenyellow; cursor: pointer; font-size: 20px;">Load Script</button>
+
+    </div>
+    
+    <!-- Area to display script output -->
+    <div id="output"></div>
+
+    <script>
+        // Function to dynamically load the chosen script
+        function loadScript(scriptFile) {
+            const script = document.createElement('script');
+            script.src = scriptFile;
+            document.body.appendChild(script);
+        }
+
+        // Event listener for the button click
+        document.getElementById('load-script').addEventListener('click', function() {
+            // Get the value from the dropdown
+            const selectedScript = document.getElementById('script-choice').value;
+            // Load the selected script dynamically
+            loadScript(selectedScript);
+        });
+    </script>
+</body>
+</html>
